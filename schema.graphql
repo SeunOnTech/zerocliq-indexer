@@ -1,0 +1,21 @@
+type EntryPoint_UserOperationEvent {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+  paymaster: String!
+  nonce: BigInt!
+  success: Boolean!
+  actualGasCost: BigInt!
+  actualGasUsed: BigInt!
+  transactionHash: String!
+  blockNumber: Int!
+  blockTimestamp: Int!
+}
+
+type GlobalAggregate {
+  id: ID!
+  totalOps: BigInt!
+  totalGasUsed: BigInt!
+  totalTransactions: BigInt!
+}
+

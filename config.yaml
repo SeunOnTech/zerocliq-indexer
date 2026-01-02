@@ -1,0 +1,15 @@
+name: zerocliq-indexer
+networks:
+  - id: 11155111
+    start_block: 9940000
+    contracts:
+      - name: EntryPoint
+        address:
+          - "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"
+          - "0x0000000071727De22E5E9d8BAf0edAc6f37da032"
+        handler: src/EventHandlers.ts
+        events:
+          - event: UserOperationEvent(bytes32 indexed userOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
+            field_selection:
+              transaction_fields:
+                - hash
