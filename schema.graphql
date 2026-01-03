@@ -19,3 +19,24 @@ type GlobalAggregate {
   totalTransactions: BigInt!
 }
 
+type Account {
+  id: ID!
+  totalOps: Int!
+  totalGasUsed: BigInt!
+  lastActive: Int!
+}
+
+type Paymaster {
+  id: ID!
+  totalSponsored: BigInt!
+  opsCount: Int!
+  lastActive: Int!
+}
+
+type HourlyStat {
+  id: ID!
+  timestamp: Int!
+  opsCount: Int!
+  gasUsed: BigInt!
+}
+
